@@ -1,0 +1,59 @@
+<ion-view>
+	<ion-content>
+		<div class="postTalentHeading">
+			<p class="postTalentHeadingTxt">Post your talent</p>
+		</div>
+		<div class="postTalentMain">
+			<div class="postTalentInner">
+				<div class="postTalentStep">
+					<input type="text" class="textBoxPT" placeholder="Enter your talent title" ng-model="talent"/>
+				</div>
+				<div class="postTalentStep">
+					<textarea class="textAreaPT" rows="5" placeholder="Enter your talent description" ng-model="description"></textarea>
+				</div>
+				<div class="postTalentStep">
+					<div class="list">
+						<label class="item item-input item-select">
+							<div class="input-label">Select Category</div>
+							<select ng-options="categorie as categorie.name for categorie in categories" ng-model="item" ng-change="cat()"></select>
+						</label>
+					</div>		
+				</div>
+				<div class="postTalentStep">
+					<div class="list">
+						<label class="item item-input item-select">
+							<div class="input-label">Select Sub Category</div>
+							<select ng-options="subcategorie as subcategorie.name for subcategorie in subcategories" ng-model="dd"></select>
+						</label>
+      				</div>		
+				</div>
+				<div class="postTalentStep">
+					<p class="selectCategoriesP fleft">Select category</p>
+					<p class="selectCategoriesP fright">Select sub category</p>
+				</div>
+				<div class="postTalentStep">
+					<ion-radio ng-model="choice" ng-value="'image'" ng-click="video()">Upload Image</ion-radio>
+					<ion-radio ng-model="choice" ng-value="'video'" ng-click="video()">Upload Video</ion-radio>
+				</div>
+				<div class="postTalentStep">
+					<input type="text" class="textBoxPT" placeholder="Paste your video url" ng-show="videoURL" ng-model="vURL"/>
+					<div class="uploadImageMain">
+						<div class="uploadImageInner fleft">
+							<i class="fa fa-picture-o uploadPhotoIcon"></i>
+							<p class="uploadPhotoTxt">Add Photo</p>
+							<input type="file" value="" class="uploadImageInput" />
+						</div>
+						<div class="uploadImageInner fright">
+							<i class="fa fa-picture-o uploadPhotoIcon"></i>
+							<p class="uploadPhotoTxt">Add Photo</p>
+							<input type="file" value="" class="uploadImageInput" />
+						</div>
+					</div>
+				</div>
+				<div class="postTalentStep">
+					<input type="submit" class="submitPost" value="Submit talent" ng-click="submit()"/>
+				</div>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

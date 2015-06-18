@@ -1,0 +1,80 @@
+@font-face {
+	font-family: 'BebasNeuewebfont';
+	src: url('../fonts/BebasNeuewebfont.eot');
+	src: local('BebasNeuewebfont'), url('../fonts/BebasNeuewebfont.woff') format('woff'), url('../fonts/BebasNeuewebfont.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'CANDARA';
+	src: url('../fonts/CANDARA.eot');
+	src: local('CANDARA'), url('../fonts/CANDARA.woff') format('woff'), url('../fonts/CANDARA.ttf') format('truetype');
+}
+
+.fleft{float:left;}
+.fright{float:right;}
+.relative {position: relative !important;}
+.absolute {position: absolute !important;}
+.fixed {position: fixed !important;}
+.static {position: static !important;}
+.hide{display:none !important;}
+.show{display:block !important;}
+.noMargin {margin: 0px !important;}
+.noBg{background:none;}
+
+/*intro screen starts*/
+.introBg{width:100%;float:left;position:fixed;height:100%;overflow:hidden;top:0px;left:0px;z-index:1;}
+.introBgImg{width:100%;min-height:100%;float:left;height:auto;}
+
+.introContentDiv{position:absolute;width:100%;float:left;padding:25px;top:0px;left:0px;z-index:2;}
+
+.introHeading{width:100%;float:left;margin-top:20px;}
+.introHeadingTxt{font-family:BebasNeuewebfont;font-size:4em;color:#fff;line-height:55px;text-align:center;}
+
+.introContent{width:100%;float:left;margin-top:20px;}
+.introContentTxt{width:100%;float:left;font-family:CANDARA;font-size:1.5em;color:#fff;text-align:center;line-height:24px;}
+
+.introButtonInput{position: fixed;bottom: 15px;background: #fff;color:#222;font-family:CANDARA;padding: 8px 0px;border-radius: 5px;left: 15px;right:15px;text-align: center;font-size:1.3em;z-index:2;}
+/*intro screen ends*/
+
+/*user login screen starts*/
+.registrationBg{width:100%;float:left;position:fixed;height:100%;overflow:hidden;top:0px;left:0px;z-index:1;}
+.registrationBgImg{width:100%;min-height:100%;float:left;height:auto;}
+
+.loginContentDiv{position:absolute;width:100%;float:left;padding:25px;top:0px;left:0px;z-index:2;}
+.loginHeading{width:100%;float:left;margin-top:20px;}
+.loginHeadingTxt{font-family:BebasNeuewebfont;font-size:2.6em;color:#fff;line-height:45px;text-align:center;}
+
+.loginContent{width:100%;float:left;margin-top:35px;position:relative;}
+.loginContentInner{width:260px;position:relative;left:50%;margin-left:-130px;}
+.signUpUsingGoogle{padding:8px 14px;color:#fff;background:#dd4b39;border-radius:5px;text-align:center;font-family:CANDARA;font-size:1.3em;}
+
+.orContainer{width:100%;float:left;margin:10px 0px;position:relative;}
+.orLine{width:100%;float:left;height:2px;background:#fff;position:absolute;top:14px;left:0px;z-index:2;}
+.orSymbol{float:left;position:relative;height:30px;width:30px;background:#fff;color:#222;border-radius:30px;font-family:CANDARA;font-size:1.2em;text-align:center;line-height:30px;left:50%;margin-left:-15px;z-index:3;}
+
+.signUpUsingFacebook{padding:8px 14px;color:#fff;float:left;width:100%;background:#3b5999;border-radius:5px;text-align:center;font-family:CANDARA;font-size:1.3em;}
+
+.loginButtonInput{position: fixed;bottom: 15px;background: #fff;color:#222;font-family:CANDARA;padding: 8px 0px;border-radius: 5px;left: 15px;right:15px;text-align: center;font-size:1.3em;z-index:2;}
+/*user login screen ends*/
+
+/*post talent screen starts*/
+.postTalentMain{width:100%;}
+.postTalentHeading{width:100%;float:left;padding:15px 0px;background:#0eadf4;margin-bottom:20px;}
+.postTalentHeadingTxt{width:100%;float:left;color:#fff;font-family:CANDARA;text-align:center;font-size:1.5em;}
+
+.postTalentInner{width:100%;padding:20px;}
+.postTalentStep{width:100%;float:left;margin-bottom:25px;}
+
+.textBoxPT{width:100%;border-bottom:1px solid #0eadf4 !important;color:#222 !important;font-family:CANDARA;font-size:1.3em !important;}
+.textAreaPT{width:100%;border-bottom:1px solid #0eadf4 !important;color:#222 !important;font-family:CANDARA;font-size:1.3em !important;resize:none;}
+
+.selectCategoriesP{border-bottom:1px solid #0eadf4 !important;color:#aaa !important;font-family:CANDARA;font-size:1.3em !important;padding-bottom:10px;width:48%;}
+
+.submitPost{background:#fff;color:#0eadf4;font-family:CANDARA;padding: 8px 0px;text-align: center;font-size:1.3em;z-index:5;width:100%;border:1px solid #0eadf4 !important;position:relative;}
+
+.uploadImageMain{width:100%;margin:0px 0px 0px 0px;}
+.uploadImageInner{width:46%;height:120px;position:relative;border:2px dashed #aaa;}
+.uploadPhotoIcon{width:100%;float:left;color:#aaa;text-align:center;font-size:3em !important;margin:25px 0px 10px;}
+.uploadPhotoTxt{width:100%;float:left;text-align:center;font-family:CANDARA;font-size:1.4em;color:#aaa;}
+.uploadImageInput{width:100%;height:100%;float:left;position:absolute;left:0px;top:0px;opacity:0;}
+/*post talent screen ends*/
