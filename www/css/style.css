@@ -78,3 +78,22 @@
 .uploadPhotoTxt{width:100%;float:left;text-align:center;font-family:CANDARA;font-size:1.4em;color:#aaa;}
 .uploadImageInput{width:100%;height:100%;float:left;position:absolute;left:0px;top:0px;opacity:0;}
 /*post talent screen ends*/
+
+/*select category starts*/
+.modelHeaderMain{background:#0eadf4;float:left;}
+.doneButtonModel{width:150px;float:right;background:#0290cf;}
+.modelHeading{width:100%;text-align:left;color: #fff;font-family: CANDARA;font-size: 1.5em;margin:13px 0px 0px 15px;}
+.doneIconModel{color: #fff;font-size: 2em;margin: 10px 0px 0px 15px;float: left;}
+.dontButtonTxt{color: #fff;font-size: 1.4em;margin: 12px 0px 0px 7px;float: left;}
+
+.categoriesListMain{width:100%;float:left;margin-top:45px;}
+.categoriesList{width:100%;float:left;height:130px;overflow:hidden;position:relative;}
+.categoryImageImg{width:100%;min-height:100%;float:left;position:relative;top:0px;left:0px;}
+.categoryOverlayNicon{width:100%;position:absolute;top:0px;left:0px;height:130px;background: rgba(33,33,33,1);background: -moz-linear-gradient(top, rgba(33,33,33,1) 0%, rgba(0,0,0,0) 100%);background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(33,33,33,1)), color-stop(100%, rgba(0,0,0,0)));background: -webkit-linear-gradient(top, rgba(33,33,33,1) 0%, rgba(0,0,0,0) 100%);background: -o-linear-gradient(top, rgba(33,33,33,1) 0%, rgba(0,0,0,0) 100%);background: -ms-linear-gradient(top, rgba(33,33,33,1) 0%, rgba(0,0,0,0) 100%);background: linear-gradient(to bottom, rgba(33,33,33,1) 0%, rgba(0,0,0,0) 100%);filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#212121', endColorstr='#000000', GradientType=0 );}
+
+.selectCategoryIcon {font-size: 2em!important;color: #fff;float: left;margin: 0px 0px 0px;text-align: right;position:absolute;right:20px;top:40%;}
+.categorySelectedIcon {font-size: 2em!important;color: #fff;float: left;visibility: hidden;position:absolute;right:20px;top:40%;}
+.categoryOverlayNicon input {width: 100%;height: 100%;float: left;opacity: 0;position: absolute;z-index: 999;top: 0px;right: 0px;}
+.categoryOverlayNicon input:checked + .categorySelectedIcon {visibility: visible;}
+.categoryNameTxt{width:100%;float:left;position:absolute;color:#fff;font-size:1.7em;text-shadow:1px 1px 3px rgba(0,0,0,0.6);top:20px;left:20px;font-weight:600;font-family:candara;}
+/*select category ends*/

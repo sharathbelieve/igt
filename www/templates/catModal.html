@@ -1,0 +1,26 @@
+<ion-view>
+	<ion-content>
+		<div class="bar bar-header action-bar-gradient modelHeaderMain">
+			<p class="modelHeading">Select Category</p>
+			
+			<div class="doneButtonModel" ng-click="doneCat()">
+				<i class="ion-android-done doneIconModel"></i>
+				<p class="dontButtonTxt">Done</p>
+			</div>
+		</div>
+		
+		<div class="categoriesListMain">
+			<form>
+			<div class="categoriesList" ng-repeat="category in categories">
+				<img ng-src="img/arts.jpg" class="categoryImageImg" alt="" />
+				<div class="categoryOverlayNicon">
+					<input type="radio" name="categories" value="{{category.name}}" />
+					<i class="fa fa-heart categorySelectedIcon"></i>
+					<i class="fa fa-heart-o selectCategoryIcon"></i>
+				</div>
+				<p class="categoryNameTxt">{{category.name}}</p>
+			</div>
+			</form>
+		</div>
+	</ion-content>
+</ion-view>

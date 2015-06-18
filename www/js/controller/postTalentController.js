@@ -1,15 +1,37 @@
 var PostTalentController = angular.module('PostTalentController', []);
 
-PostTalentController.controller('PostTalentController', function($scope, $stateParams, $http, domainUrl) {
+PostTalentController.controller('PostTalentController', function($scope, $stateParams, $http, domainUrl, $ionicModal) {
 	
   var cid;
-  $http.get(domainUrl+'categories').then(function(data){
-     console.log(data.data);
-	$scope.categories = data.data;
-
+  $http.get(domainUrl+'categories').success(function(categories){
+  console.log(categories);
+  $scope.categories = categories;
   }, function(err){
 
   })
+  
+  $http.get(domainUrl+'subcategories?cid=1').success(function(subCategories){
+  console.log(subCategories);
+  $scope.subCategories = subCategories;
+  }, function(err){
+
+  })
+  
+	$ionicModal.fromTemplateUrl('templates/catModal.html', function (modal) {
+	$scope.catModal = modal;
+	},{
+		scope: $scope,
+		animation: 'slide-in-up',
+		backdropClickToClose: false
+	});
+	
+	$ionicModal.fromTemplateUrl('templates/subCatModal.html', function (subCatModal) {
+	$scope.subCatModal = subCatModal;
+	},{
+		scope: $scope,
+		animation: 'slide-in-up',
+		backdropClickToClose: false
+	});
 
   $scope.videoURL = false;
   $scope.submit = function() {
