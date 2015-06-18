@@ -12,7 +12,7 @@
 		<div class="categoriesListMain">
 			<form>
 			<div class="categoriesList" ng-repeat="category in categories">
-				<img ng-src="img/arts.jpg" class="categoryImageImg" alt="" />
+				<img ng-src="{{category.img_url}}" class="categoryImageImg" alt="" />
 				<div class="categoryOverlayNicon">
 					<input type="radio" name="categories" value="{{category.name}}" ng-click="getCID()"/>
 					<i class="fa fa-heart categorySelectedIcon"></i>
