@@ -3,9 +3,9 @@
 		<div class="bar bar-header action-bar-gradient modelHeaderMain">
 			<p class="modelHeading">Select Category</p>
 			
-			<div class="doneButtonModel" ng-click="doneCat()">
+			<div class="doneButtonModel">
 				<i class="ion-android-done doneIconModel"></i>
-				<p class="dontButtonTxt">Done</p>
+				<p class="dontButtonTxt" ng-click="doneCat()">Done</p>
 			</div>
 		</div>
 		
@@ -14,7 +14,7 @@
 			<div class="categoriesList" ng-repeat="category in categories">
 				<img ng-src="img/arts.jpg" class="categoryImageImg" alt="" />
 				<div class="categoryOverlayNicon">
-					<input type="radio" name="categories" value="{{category.name}}" />
+					<input type="radio" name="categories" value="{{category.name}}" ng-click="getCID()"/>
 					<i class="fa fa-heart categorySelectedIcon"></i>
 					<i class="fa fa-heart-o selectCategoryIcon"></i>
 				</div>
