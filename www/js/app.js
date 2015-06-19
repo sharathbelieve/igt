@@ -23,6 +23,22 @@ igotalent.config(function($stateProvider, $urlRouterProvider) {
     url: "/intro",
     templateUrl: "templates/intro.html"
   })
+  
+  .state('activity.html', {
+        url: "/activity.html",
+        templateUrl: "templates/activity.html.html"
+    })
+
+  .state('getAllTalent', {
+        url: "/getAllTalent",
+        templateUrl: "templates/getAllTalent.html"
+    })
+
+  .state('getTalent', {
+        url: "/getTalent",
+        templateUrl: "templates/getTalent.html"
+    })
+
 
   .state('login', {
     url: "/login",
