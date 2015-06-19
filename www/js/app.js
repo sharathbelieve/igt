@@ -24,9 +24,9 @@ igotalent.config(function($stateProvider, $urlRouterProvider) {
     templateUrl: "templates/intro.html"
   })
   
-  .state('activity.html', {
-        url: "/activity.html",
-        templateUrl: "templates/activity.html.html"
+  .state('activity', {
+        url: "/activity",
+        templateUrl: "templates/activity.html"
     })
 
   .state('getAllTalent', {
