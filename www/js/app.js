@@ -1,4 +1,4 @@
-var igotalent = angular.module('igotalent', ['ionic', 'LoginController', 'PostTalentController', 'GetMyTalentController'])
+var igotalent = angular.module('igotalent', ['ionic', 'LoginController', 'PostTalentController', 'GetMyTalentController', 'GetTalentController'])
 
 igotalent.run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -38,7 +38,8 @@ igotalent.config(function($stateProvider, $urlRouterProvider) {
 
 	.state('getAllTalent', {
         url: "/getAllTalent",
-        templateUrl: "templates/getAllTalent.html"
+        templateUrl: "templates/getAllTalent.html",
+        controller: 'GetTalentController'
     })
 
 	.state('getTalent', {
