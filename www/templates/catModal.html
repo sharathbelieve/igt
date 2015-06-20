@@ -1,16 +1,16 @@
 <ion-view>
-	<ion-content>
+	<ion-header-bar align-title="left" class="bar-positive">
 		<div class="bar bar-header action-bar-gradient modelHeaderMain">
 			<p class="modelHeading">Select Category</p>
 			
-			<div class="doneButtonModel">
+			<div class="doneButtonModel" ng-click="doneCat()">
 				<i class="ion-android-done doneIconModel"></i>
-				<p class="dontButtonTxt" ng-click="doneCat()">Done</p>
+				<p class="dontButtonTxt">Done</p>
 			</div>
 		</div>
-		
+	</ion-header-bar>
+	<ion-content overflow-scroll="true">
 		<div class="categoriesListMain">
-			<form>
 			<div class="categoriesList" ng-repeat="category in categories">
 				<img ng-src="{{category.img_url}}" class="categoryImageImg" alt="" />
 				<div class="categoryOverlayNicon">
@@ -20,7 +20,6 @@
 				</div>
 				<p class="categoryNameTxt">{{category.name}}</p>
 			</div>
-			</form>
 		</div>
 	</ion-content>
 </ion-view>
