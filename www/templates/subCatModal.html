@@ -1,18 +1,18 @@
 <ion-view>
-	<ion-content>
+	<ion-header-bar align-title="left" class="bar-positive">
 		<div class="bar bar-header action-bar-gradient modelHeaderMain">
 			<p class="modelHeading">Select Sub Category</p>
 			
-			<div class="doneButtonModel">
+			<div class="doneButtonModel" ng-click="doneSubCat()">
 				<i class="ion-android-done doneIconModel"></i>
-				<p class="dontButtonTxt" ng-click="doneSubCat()">Done</p>
+				<p class="dontButtonTxt">Done</p>
 			</div>
 		</div>
-		
+	</ion-header-bar>
+	<ion-content overflow-scroll="true">
 		<div class="categoriesListMain">
-			<form>
 			<div class="categoriesList" ng-repeat="subCategory in subCategories">
-				<img ng-src="img/arts.jpg" class="categoryImageImg" alt="" />
+				<img ng-src="{{subCategory.img_url}}" class="categoryImageImg" alt="" />
 				<div class="categoryOverlayNicon">
 					<input type="radio" name="categories" value="{{subCategory.name}}"  ng-click="getSubCID()"/>
 					<i class="fa fa-heart categorySelectedIcon"></i>
@@ -20,7 +20,7 @@
 				</div>
 				<p class="categoryNameTxt">{{subCategory.name}}</p>
 			</div>
-			</form>
 		</div>
 	</ion-content>
 </ion-view>
+
