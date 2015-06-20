@@ -1,4 +1,4 @@
-var PostTalentController = angular.module('PostTalentController', ['lr.upload']);
+var PostTalentController = angular.module('PostTalentController', []);
 
 PostTalentController.controller('PostTalentController', function($scope, $stateParams, $http, domainUrl, $ionicModal, $window) {
 	
