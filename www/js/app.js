@@ -17,41 +17,35 @@ igotalent.run(function($ionicPlatform) {
 igotalent.value("domainUrl", "http://www.believetech.in/js/serv/igtservapp/")
 
 igotalent.config(function($stateProvider, $urlRouterProvider) {
-  $stateProvider
+	$stateProvider
 
-  .state('intro', {
-    url: "/intro",
-    templateUrl: "templates/intro.html"
-  })
-  
-  .state('activity', {
-        url: "/activity",
-        templateUrl: "templates/activity.html"
-    })
+	.state('intro', {
+		url: "/intro",
+		templateUrl: "templates/intro.html"
+	})
 
-  .state('getAllTalent', {
+	.state('login', {
+		url: "/login",
+		templateUrl: "templates/userLogin.html",
+		controller: 'LoginController'
+	})
+
+	.state('postTalent', {
+		url: "/postTalent",
+		templateUrl: "templates/posTalent.html",
+		controller: 'PostTalentController'
+	})
+
+	.state('getAllTalent', {
         url: "/getAllTalent",
         templateUrl: "templates/getAllTalent.html"
     })
 
-  .state('getTalent', {
+	.state('getTalent', {
         url: "/getTalent",
         templateUrl: "templates/getTalent.html"
     })
-
-
-  .state('login', {
-    url: "/login",
-    templateUrl: "templates/userLogin.html",
-    controller: 'LoginController'
-  })
-
-  .state('postTalent', {
-    url: "/postTalent",
-    templateUrl: "templates/posTalent.html",
-    controller: 'PostTalentController'
-  })
-
+  
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/intro');
 });
