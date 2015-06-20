@@ -1,8 +1,10 @@
 <ion-view>
-	<ion-content>
+	<ion-header-bar align-title="left" class="bar-positive">
 		<div class="postTalentHeading">
 			<p class="postTalentHeadingTxt">Post your talent</p>
 		</div>
+	</ion-header-bar>
+	<ion-content>
 		<div class="postTalentMain">
 			<div class="postTalentInner">
 				<div class="postTalentStep">
@@ -11,22 +13,7 @@
 				<div class="postTalentStep">
 					<textarea class="textAreaPT" rows="5" placeholder="Enter your talent description" ng-model="description"></textarea>
 				</div>
-				<!-- <div class="postTalentStep">
-					<div class="list">
-						<label class="item item-input item-select">
-							<div class="input-label">Select Category</div>
-							<select ng-options="categorie as categorie.name for categorie in categories" ng-model="item" ng-change="cat()"></select>
-						</label>
-					</div>		
-				</div>
-				<div class="postTalentStep">
-					<div class="list">
-						<label class="item item-input item-select">
-							<div class="input-label">Select Sub Category</div>
-							<select ng-options="subcategorie as subcategorie.name for subcategorie in subcategories" ng-model="dd"></select>
-						</label>
-      				</div>		
-				</div> -->
+				
 				<div class="postTalentStep">
 					<p class="selectCategoriesP fleft" ng-click="catModal.show();">{{selectCat}}</p>
 					<p class="selectCategoriesP fright" ng-click="subCatModal.show();">{{selSubCat}}</p>
@@ -41,12 +28,13 @@
 						<div class="uploadImageInner fleft">
 							<i class="fa fa-picture-o uploadPhotoIcon"></i>
 							<p class="uploadPhotoTxt">Add Photo</p>
-							<input type="file" value="" class="uploadImageInput" />
+							<input type="file" class="uploadImageInput" ng-model="image1" onchange="angular.element(this).scope().updateImage1()" />
 						</div>
 						<div class="uploadImageInner fright">
 							<i class="fa fa-picture-o uploadPhotoIcon"></i>
 							<p class="uploadPhotoTxt">Add Photo</p>
-							<input type="file" value="" class="uploadImageInput" />
+							<input type="file" class="uploadImageInput" ng-model="image2" ng-change="updateImage2()" />
+							<img ng-src="" class="" alt="" />
 						</div>
 					</div>
 				</div>
