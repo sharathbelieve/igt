@@ -9,13 +9,17 @@
 			<div class="postTalentInner">
 				<div class="postTalentStep">
 					<input type="text" class="textBoxPT" placeholder="Enter your talent title" ng-model="talent"/>
+					<p ng-show="Vtitle">Title</p>
 				</div>
 				<div class="postTalentStep">
 					<textarea class="textAreaPT" rows="5" placeholder="Enter your talent description" ng-model="description"></textarea>
+					<p ng-show="Vdesc">Description</p>
 				</div>
 				
 				<div class="postTalentStep">
+<p ng-show="Vcat">DSdsds</p>
 					<p class="selectCategoriesP fleft" ng-click="catModal.show();">{{selectCat}}</p>
+<p ng-show="Vsubcat">DSdsds</p>
 					<p class="selectCategoriesP fright" ng-click="subCatModal.show();">{{selSubCat}}</p>
 				</div>
 				<div class="postTalentStep">
@@ -28,16 +32,18 @@
 						<div class="uploadImageInner fleft">
 							<i class="fa fa-picture-o uploadPhotoIcon"></i>
 							<p class="uploadPhotoTxt">Add Photo</p>
-							<input type="file" class="uploadImageInput" ng-model="image1" onchange="angular.element(this).scope().updateImage1()" />
+							<input type="file" class="uploadImageInput" fileread="vm.uploadme"/>
 						</div>
 						<div class="uploadImageInner fright">
 							<i class="fa fa-picture-o uploadPhotoIcon"></i>
 							<p class="uploadPhotoTxt">Add Photo</p>
-							<input type="file" class="uploadImageInput" ng-model="image2" ng-change="updateImage2()" />
+							<input type="file" class="uploadImageInput"  filereads="vm.uploadme" />
 							<img ng-src="" class="" alt="" />
 						</div>
+						<p ng-show="Vmedia">ssasa</p>
 					</div>
 				</div>
+
 				<div class="postTalentStep">
 					<input type="submit" class="submitPost" value="Submit talent" ng-click="submit()"/>
 				</div>
