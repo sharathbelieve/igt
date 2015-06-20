@@ -1,4 +1,4 @@
-var igotalent = angular.module('igotalent', ['ionic', 'LoginController', 'PostTalentController'])
+var igotalent = angular.module('igotalent', ['ionic', 'LoginController', 'PostTalentController', 'GetMyTalentController'])
 
 igotalent.run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
