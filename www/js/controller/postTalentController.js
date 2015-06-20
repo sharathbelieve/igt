@@ -1,10 +1,14 @@
-var PostTalentController = angular.module('PostTalentController', []);
+var PostTalentController = angular.module('PostTalentController', ['lr.upload']);
 
-PostTalentController.controller('PostTalentController', function($scope, $stateParams, $http, domainUrl, $ionicModal) {
+PostTalentController.controller('PostTalentController', function($scope, $stateParams, $http, domainUrl, $ionicModal, $window) {
 	
   
 $scope.selectCat = 'Select Categories';
 $scope.selSubCat = 'Select Sub Category';
+$scope.Vtitle = false;
+$scope.Vdesc = false;
+$scope.Vcat = false;
+$scope.Vsubcat = false;
 
   var cid;
   $http.get(domainUrl+'categories').success(function(categories){
@@ -13,7 +17,6 @@ $scope.selSubCat = 'Select Sub Category';
   }, function(err){
   	console.log(err);
   })
-  
   
   
 var selectedCateogryID;
@@ -31,6 +34,7 @@ var selectedSubCateogryID;
 
   })
   }
+
 
   $scope.getSubCID = function() {
   
@@ -59,20 +63,48 @@ var selectedSubCateogryID;
 
 	$scope.doneCat = function() {
 		$scope.catModal.hide();
+		$scope.selSubCat = 'Select Sub Category';
 	}
 
 	$scope.doneSubCat = function() {
 		$scope.subCatModal.hide();
+		$scope.Vsubcat = false; 
 	}
 
   $scope.videoURL = false;
   $scope.submit = function() {
-    alert(this.talent);
-    alert(this.description);
-    alert(this.choice);
-    alert(this.category);
-    alert(selectedCateogryID);
-    alert(selectedSubCateogryID);
+ 	if(this.talent == null) {
+  		$scope.Vtitle = true;
+		$scope.Vdesc = false;
+		$scope.Vcat = false;
+		$scope.Vsubcat = false;
+	} else if(this.description == '' || this.description == null) {
+  		$scope.Vdesc = true;
+		$scope.Vtitle = false;
+		$scope.Vcat = false;
+		$scope.Vsubcat = false;
+	} else if($scope.selectCat == 'Select Categories') {
+  		$scope.Vcat = true;
+		$scope.Vtitle = false;
+		$scope.Vdesc = false;
+		$scope.Vsubcat = false;
+	} else if($scope.selSubCat == 'Select Sub Category') {
+		$scope.Vsubcat = true;  		
+		$scope.Vcat = false;
+		$scope.Vtitle = false;
+		$scope.Vdesc = false;
+		
+	} else if(window.localStorage['media'] == '' && window.localStorage['media1'] == '') {
+		$scope.Vmedia = true;	
+	} else {
+		console.log('validation done not post the data');
+		console.log(this.talent);
+		console.log(this.description);
+		console.log(selectedCateogryID);
+		console.log(selectedSubCateogryID);
+		console.log(window.localStorage['media']);
+		console.log(window.localStorage['media1']);
+	}
   }
   
   $scope.cat = function() {
