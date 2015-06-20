@@ -1,12 +1,19 @@
 <ion-view>
-	<div class="tabs-top tabCustomBar remove-tabs-top-spacing">
-		<div class="tabs">
-			  <a class="tab-item" ui-sref="activity">Activity</a>
-			  <a class="tab-item active">My Talent</a>
-			  <a class="tab-item" ui-sref="getTalent">Talent</a>
-	   </div>
-	</div>
+	<ion-header-bar align-title="left" class="bar-positive">
+		<div class="buttons">
+			<button class="button" ng-click="doSomething()">Left Button</button>
+		</div>
+		<h1 class="title">Title!</h1>
+		<div class="buttons">
+			<button class="button">Right Button</button>
+		</div>
+	</ion-header-bar>
 	<ion-content>
-<h1>Talent</h1>
+		<div class="tabs-top tabCustomBar remove-tabs-top-spacing">
+			<div class="tabs">
+				<a class="tab-item active">My Profile</a>
+				<a class="tab-item" ui-sref="getAllTalent">Activity Feed</a>
+			</div>
+		</div>
 	</ion-content>
 </ion-view>
