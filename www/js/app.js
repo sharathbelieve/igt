@@ -43,7 +43,8 @@ igotalent.config(function($stateProvider, $urlRouterProvider) {
 
 	.state('getTalent', {
         url: "/getTalent",
-        templateUrl: "templates/getTalent.html"
+        templateUrl: "templates/getTalent.html",
+        controller: 'GetMyTalentController'
     })
   
   // if none of the above states are matched, use this as the fallback
