@@ -14,6 +14,54 @@ igotalent.run(function($ionicPlatform) {
   });
 })
 
+
+igotalent.directive("fileread", [function ($scope, $window, $rootScope) {
+    return {
+        scope: {
+            fileread: "="
+        },
+        link: function (scope, element, attributes) {
+            element.bind("change", function (changeEvent) {
+                var reader = new FileReader();
+
+                reader.onload = function (loadEvent) {
+                    scope.$apply(function () {
+                        scope.fileread = loadEvent.target.result;
+
+                    });
+                }
+				window.localStorage['media'] =  changeEvent.target.files[0].name;
+				console.log(window.localStorage['media']);
+				 reader.readAsDataURL(changeEvent.target.files[0]);
+            });
+        }
+    }
+}]);
+
+igotalent.directive("filereads", [function ($scope, $window, $rootScope) {
+    return {
+        scope: {
+            filereads: "="
+        },
+        link: function (scope, element, attributes) {
+            element.bind("change", function (changeEvent) {
+                var reader = new FileReader();
+
+                reader.onload = function (loadEvent) {
+                    scope.$apply(function () {
+                        scope.filereads = loadEvent.target.result;
+
+                    });
+                }
+				window.localStorage['media1'] =  changeEvent.target.files[0].name;
+				console.log(window.localStorage['media1']);
+				 reader.readAsDataURL(changeEvent.target.files[0]);
+            });
+        }
+    }
+}]);
+
+
 igotalent.value("domainUrl", "http://www.believetech.in/js/serv/igtservapp/")
 
 igotalent.config(function($stateProvider, $urlRouterProvider) {
@@ -39,13 +87,13 @@ igotalent.config(function($stateProvider, $urlRouterProvider) {
 	.state('getAllTalent', {
         url: "/getAllTalent",
         templateUrl: "templates/getAllTalent.html",
-        controller: 'GetTalentController'
+	controller: 'GetTalentController'
     })
 
 	.state('getTalent', {
         url: "/getTalent",
         templateUrl: "templates/getTalent.html",
-        controller: 'GetMyTalentController'
+	controller: 'GetMyTalentController'
     })
   
   // if none of the above states are matched, use this as the fallback
