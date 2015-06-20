@@ -64,6 +64,7 @@ var selectedSubCateogryID;
 	$scope.doneCat = function() {
 		$scope.catModal.hide();
 		$scope.selSubCat = 'Select Sub Category';
+		$scope.Vcat = false;
 	}
 
 	$scope.doneSubCat = function() {
@@ -78,24 +79,35 @@ var selectedSubCateogryID;
 		$scope.Vdesc = false;
 		$scope.Vcat = false;
 		$scope.Vsubcat = false;
+		$scope.Vmedia = false;
+
 	} else if(this.description == '' || this.description == null) {
   		$scope.Vdesc = true;
 		$scope.Vtitle = false;
 		$scope.Vcat = false;
 		$scope.Vsubcat = false;
+		$scope.Vmedia = false;
+
 	} else if($scope.selectCat == 'Select Categories') {
   		$scope.Vcat = true;
 		$scope.Vtitle = false;
 		$scope.Vdesc = false;
 		$scope.Vsubcat = false;
+		$scope.Vmedia = false;
+
 	} else if($scope.selSubCat == 'Select Sub Category') {
 		$scope.Vsubcat = true;  		
 		$scope.Vcat = false;
 		$scope.Vtitle = false;
 		$scope.Vdesc = false;
+		$scope.Vmedia = false;
 		
 	} else if(window.localStorage['media'] == '' && window.localStorage['media1'] == '') {
 		$scope.Vmedia = true;	
+		$scope.Vsubcat = false;  		
+		$scope.Vcat = false;
+		$scope.Vtitle = false;
+		$scope.Vdesc = false;
 	} else {
 		console.log('validation done not post the data');
 		console.log(this.talent);
@@ -104,6 +116,8 @@ var selectedSubCateogryID;
 		console.log(selectedSubCateogryID);
 		console.log(window.localStorage['media']);
 		console.log(window.localStorage['media1']);
+		window.localStorage['media'] = '';
+		window.localStorage['media1'] = '';
 	}
   }
   
