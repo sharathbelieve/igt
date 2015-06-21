@@ -1,6 +1,6 @@
 var igotalent = angular.module('igotalent', ['ionic', 'LoginController', 'PostTalentController', 'GetMyTalentController', 'GetTalentController'])
 
-igotalent.run(function($ionicPlatform) {
+igotalent.run(["$ionicPlatform", "LocalStorageService", "$cordovaDevice", "$cordovaDevice", "$window", function($ionicPlatform,LocalStorageService,$cordovaDevice,$window,$cordovaDevice) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -11,8 +11,16 @@ igotalent.run(function($ionicPlatform) {
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
+	if(!($window.localStorage.deviceUUID)){
+		var uuid;
+		if (ionic.Platform.isAndroid()) {
+			uuid = $cordovaDevice.getUUID();
+		}else
+			uuid = randomString(16);
+			LocalStorageService.set('deviceUUID', uuid);
+	}
   });
-})
+}])
 
 
 igotalent.directive("fileread", [function ($scope, $window, $rootScope) {
