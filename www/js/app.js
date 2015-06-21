@@ -1,4 +1,4 @@
-var igotalent = angular.module('igotalent', ['ionic', 'LoginController', 'PostTalentController', 'GetMyTalentController', 'GetTalentController'])
+var igotalent = angular.module('igotalent', ['ionic', 'ngCordova', 'LoginController', 'PostTalentController', 'GetMyTalentController', 'UtilityService',  'GetTalentController'])
 
 igotalent.run(["$ionicPlatform", "LocalStorageService", "$cordovaDevice", "$cordovaDevice", "$window", function($ionicPlatform,LocalStorageService,$cordovaDevice,$window,$cordovaDevice) {
   $ionicPlatform.ready(function() {
